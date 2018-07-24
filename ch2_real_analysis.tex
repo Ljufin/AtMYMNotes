@@ -1,0 +1,31 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+
+\begin{center}
+\textbf{Real Analysis}
+\end{center}
+
+\paragraph{Summary:} The fundamental concepts in calculus are limits, continuity, differentiation, and integration. In turn, all these ideas are built off $\epsilon$ and $\delta$ based reasoning. A good foundation in real analysis will cover up to the uniform convergence of functions.
+\begin{itemize}
+\item \textbf{Basic Object:} The Real numbers.
+\item \textbf{Basic Maps:} Continuous and Differentiable functions.
+\item \textbf{Basic Goal:} The Fundamental Theorem of Calculus.
+\end{itemize}
+
+\paragraph{Def:} A function $f: \mathbb{R} \to \mathbb{R}$ has a \textit{limit} $L$ at the point $a$ if given $\epsilon >0$ there is a $\delta > 0$ such that $\forall x$ with $0 < |x-a| < \delta$ we have $|f(x)-L| < \epsilon$. This is denoted by 
+$$ \lim_{x \to a}f(x) = L$$
+
+\paragraph{Note:} The definition of the limit says that in order for $f(x)$ to be close to $L$, $x$ must be close to $a$. We can take the required restriction for $\epsilon$, $|f(x)-L| < \epsilon$, and find what our $\delta$ must be starting from $0 < |x-a| < \delta$.
+
+\paragraph{Def:} A function $f: \mathbb{R} \to \mathbb{R}$ is \textit{continuous} at $a$ if 
+$$ \lim_{x \to a} f(x) = f(a)$$
+
+\paragraph{Note:} In order for the limit to exist, the right and left limits must be the same value.
+
+
+
+\end{document}
