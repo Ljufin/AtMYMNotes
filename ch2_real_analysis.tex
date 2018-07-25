@@ -26,6 +26,41 @@ $$ \lim_{x \to a} f(x) = f(a)$$
 
 \paragraph{Note:} In order for the limit to exist, the right and left limits must be the same value.
 
+\paragraph{Def:} A function $f:\mathbb{R} \to \mathbb{R}$ is continuous at $a$ if given any $\epsilon>0$, there is some $\delta>0$ such that $\forall x$ with $0 < |x-a| < \delta$, we have $|f(x) - f(a)| < \epsilon$. 
+
+\paragraph{Def:} A function $f: \mathbb{R} \to \mathbb{R}$ is differentiable at $a$ if 
+$$ \lim_{x \to a} \frac{f(x)-f(a)}{x-a}$$
+exists. This limit is called the \textit{derivative} and is denoted by $f'(a)$ or $\frac{df}{dx}(a)$.
+
+\paragraph{Note:} The slope of a tangent line to a function $f$ at $a$ is given by 
+$$ f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a}$$
+
+\paragraph{Note:} Functions with sharp points such as $f(x) = |x|$ do not have derivatives at the sharp points.
+
+\paragraph{Def:} Let $f(x)$ be a real-valued function defined on the closed interval $[a,b]$. For each positive integer $n$, let the lower sum of $f(x)$ be
+$$ L(f,n) = \sum_{k=1}^n f(l_k) \Delta t$$
+and the upper sum be
+$$ U(f,n) = \sum_{k=1}^n f(u_k)\Delta t$$
+
+\paragraph{Note:} the lower sum is the sum of the areas of the rectangles below our curve while the upper sum is the sum of the areas of the rectangles below our curve.
+
+\paragraph{Def:} A real-valued function $f(x)$ with the domain $[a,b]$ is said to be integrable if the following condition holds:
+$$ \lim_{n \to \infty} L(f,n) = \lim_{n \to \infty} U(f,n)$$
+If these limits exist and are equal, we denote the quantity(both limits are the same real number) by 
+$$ \int_a^b f(x)dx$$
+and call it the \textit{integral} of $f(x)$.
+
+\paragraph{Fundamental Theorem of Calculus} Let $f(x)$ be a real-valued continuous function defined on the closed interval $[a,b]$ and define
+$$ F(x) = \int_a^x f(t)dt$$
+Then:
+\begin{enumerate}
+\item The function $F(x)$ is differentiable and 
+$$ \frac{dF(x)}{dx} = \frac{d\int_a^xf(t)dt}{dx} = f(x)$$
+\item If $G(x)$ is a real-valued differentiable function defined on the closed interval $[a,b]$ whose derivative is
+$$ \frac{dG(x)}{dx} = f(x)$$
+then
+$$ \int_a^b f(x)dx = G(b) - G(a)$$
+\end{enumerate}
 
 
 \end{document}
