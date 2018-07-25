@@ -62,5 +62,23 @@ then
 $$ \int_a^b f(x)dx = G(b) - G(a)$$
 \end{enumerate}
 
+\paragraph{Note:} This theorem essentially states that the derivative and the integral are opposites of each other.
+
+\paragraph{Def:} Let $f_n: [a,b] \to \mathbb{R}$ be a sequence of functions
+$$ f_1(x),f_2(x),f_3(x), \dots$$
+defined on an interval $[a,b] = \{x | a \leq x \leq b\}$. This sequence, denoted $\{f_n(x)\}$ will \textit{converge pointwise} to a function $f(x): [a,b] \to \mathbb{R}$ if $\forall \alpha \in [a,b]$,
+$$ \lim_{n \to \infty} f_n(\alpha) = f(\alpha)$$
+
+\paragraph{Note:} In $\epsilon$ and $\delta$ notation, we would say that $\{f_n(x)\}$ converges pointwise to $f(x)$ if $\forall \alpha \in [a,b]$ and given any $\epsilon > 0$, there is a positive integer $N$ such that $\forall n \geq N$, we have $|f(\alpha) - f_n(\alpha)|<\epsilon$.
+
+\paragraph{Note:} It is important to note that the pointwise limit of a sequence of continuous functions need not be continuous. What this means is that a bunch of continuous functions can actually converge to a discontinuous function.
+
+\paragraph{Def:} A sequence of functions $f_n:[a,b] \to \mathbb{R}$ will converge \textit{uniformly} to a function $f:[a,b] \to \mathbb{R}$ if given any $\epsilon >0$, $\exists N > 0$ such that $\forall n \geq N$, we have
+$$ |f(x)-f_n(x)| < \epsilon$$
+for all points $x$.
+
+\paragraph{Note:} Uniform convergence is stronger than pointwise convergence since the sequence will have to uniformly converge for $N$ for all points $x$. A common way to phrase uniform convergence is to say that the sequence converges independently of $x$.
+
+\paragraph{Thm.} Let
 
 \end{document}
