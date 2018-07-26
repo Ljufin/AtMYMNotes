@@ -79,6 +79,30 @@ for all points $x$.
 
 \paragraph{Note:} Uniform convergence is stronger than pointwise convergence since the sequence will have to uniformly converge for $N$ for all points $x$. A common way to phrase uniform convergence is to say that the sequence converges independently of $x$.
 
-\paragraph{Thm.} Let
+\paragraph{Thm.} Let $f_n:[a,b] \to \mathbb{R}$ be a sequence of continuous functions converging uniformly to a function $f(x)$. Then $f(x)$ will be continuous.
+
+\paragraph{Def:} Let $f_1(x),f_2(x),\dots$ be a sequence of functions. The series of functions
+$$ f_1(x)+f_2(x)+\dots = \sum_{k=1}^\infty f_k(x)$$
+converges uniformly to a function $f(x)$ if the sequence of partial sums $f_1(x), f_1(x)+f_2(x), \dots$ converges uniformly to $f(x)$.
+
+\paragraph{Note:} What this theorem allows us to do is to look at the sum up to a certain number and figure out if the series converges when $n \to \infty$.
+
+\paragraph{Thm.} If each function $f_k(x)$ is continuous and if $\sum_{k=1}^\infty f_k(x)$ converges uniformly to $f(x)$, then $f(x)$ must be continuous.
+
+\paragraph{Note:} This last result allows us to express any continuous function in terms of a series of continuous functions. You will be very thankful for this result when you are working with Holomorphic functions in Complex Analysis and even when solving differential equations. 
+
+\paragraph{Def:} A series converges \textit{absolutely} if 
+$$ \sum_{k=1}^\infty |f_k(x)|$$
+converges uniformly.
+
+\paragraph{The Weierstrass M-Test:} Let $\sum_{k=1}^\infty f_k(x)$ be series of functions, with each function $f_k(x)$ defined on a subset $A$ of the real numbers. Suppose $\sum_{k=1}^\infty M_k$ is a series of numbers such that:
+\begin{enumerate}
+\item $0 \leq |f_k(x)| \leq M_k$ for all $x \in A$.
+\item The series $\sum_{k=1}^\infty M_k$ converges.
+\end{enumerate} 
+Then $\sum_{k=1}^\infty f_k(x)$ converges uniformly and absolutely.
+
+\paragraph{Note:} The Weierstrass M-Test is a very useful tool for determining uniform convergence using basic calculus tools for testing a series convergence. The basic idea is that if the absolute value of each term in the series can be bounded by a number and if the series of these numbers converges, then the original series will converge uniformly. 
+
 
 \end{document}
