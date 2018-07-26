@@ -104,5 +104,25 @@ Then $\sum_{k=1}^\infty f_k(x)$ converges uniformly and absolutely.
 
 \paragraph{Note:} The Weierstrass M-Test is a very useful tool for determining uniform convergence using basic calculus tools for testing a series convergence. The basic idea is that if the absolute value of each term in the series can be bounded by a number and if the series of these numbers converges, then the original series will converge uniformly. 
 
+\paragraph{Exercises}
+
+\paragraph{1.} Let $f(x)$ and $g(x)$ be differentiable functions. Using the definition of the derivative, show 
+\begin{enumerate}
+\item $(f+g)' = f'+g'$
+\item $(fg)' = f'g + fg'$
+\item Assume that $f(x) = c$, where $c$ is a constant. Show that $f'(x) = 0$.
+\end{enumerate}
+\begin{flushleft}
+\textit{1.1:}\\
+$$(f+g)'  =  \lim_{h \to 0} \frac{(f+g)(x+h)-(f+g)(x)}{h} = \lim_{h \to 0} \frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}$$
+$$ = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}+ \lim_{h \to 0} \frac{g(x+h)-g(x)}{h} = f'+g'$$
+$\blacksquare$\\
+\textit{1.2:}\\
+$$ (fg)' = \lim_{h \to 0} \frac{(fg)(x+h) - fg(x)}{h} = \lim_{h \to 0} \frac{f(x+h)g(x+h) - f(x)g(x)}{h}$$
+$$ = \lim_{h \to 0} \frac{f(x+h)g(x+h)}{h} - \lim_{h \to 0} \frac{f(x)g(x)}{h}$$
+$$= \lim_{h \to 0} \frac{f(x+h)g(x)+f(x)g(x+h) - 2f(x)g(x)}{h} $$
+$$= \lim_{h \to 0} \frac{f(x+h)g(x) - f(x)g(x)}{h} + \lim_{h \to 0} \frac{f(x)g(x+h)-f(x)g(x)}{h}$$
+$$= g(x)\lim_{h \to 0} \frac{f(x+h) - f(x)}{h} + f(x)\lim_{h \to 0} \frac{g(x+h)-g(x)}{h}$$
+\end{flushleft}
 
 \end{document}
