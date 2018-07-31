@@ -180,6 +180,24 @@ $\int xdx = \frac{1}{2}x^2 + C$. Therefore, $\int_0^1 xdx = \frac{1}{2}(1)^2 - \
 If $n=1$, $\sum_{i=1}^1 i =1$ and $\frac{1(1+1)}{2} = 1$. Now suppose for $n=k$ that
 $$ \sum_{i=1}^k i = \frac{k(k+1)}{2}$$
 Now with $n=k+1$
-$$\sum_{i=1}^{k+1} i = \sum_{i=1}^{k} + (k+1) = \frac{k(k+1)}{2} +(k+1)$$
+$$\sum_{i=1}^{k+1} i = \sum_{i=1}^{k} i + (k+1) = \frac{k(k+1)}{2} +(k+1)$$
+$$  = \frac{k(k+1)}{2}+\frac{2(k+1)}{2} = \frac{k^2+3k+2}{2} = \frac{(k+1)(k+2)}{2}$$
+By the definition of the integral, 
+$$ \int_0^1 x dx = \lim_{n \to \infty} L(x,n) = \sum_{k=1}^\infty l_k \Delta t$$
+(don't really know where to go from here...)
+\end{flushleft}
+
+\paragraph{4.} Let $f(x)$ be differentiable. Show that $f(x)$ must be continuous.
+\begin{flushleft}
+\textit{Proof:}\\
+If $f(x)$ is differentiable, then
+$$ f'(x) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a}$$
+exists for all $x$. By the quotient law for limits, we know that the numerator exists, and that
+$$ \lim_{x \to a} f(x) -f(a) = \lim_{x \to a} f(x) - \lim_{x \to a}f(a) = f(a)-f(a) = 0$$
+Therefore, 
+$$ \lim_{x \to a} f(x) - \lim_{x \to a}f(a) = 0$$
+and
+$$ \lim_{x \to a} f(x) = f(a)$$
+$\blacksquare$
 \end{flushleft}
 \end{document}
