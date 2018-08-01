@@ -28,4 +28,68 @@ $$ |a| = \sqrt{a_1^2+\dots+a_n^2}$$
 
 \paragraph{Note:} You may have noticed that there is a slight difference between vectors and points. A point is a location in space while a vector can be treated as a set of instructions to get from the origin to its associated point. More generally, remember that vectors in $\mathbb{R}^n$ are a particular case of the mathematical object called a vector. These vectors form a vector space over $\mathbb{R}$ while points do not. To illustrate this, consider the whether it makes any sense to add two points together or to scale a point. All these operations are meaningful in the context of vector spaces, but are meaningless when applied to locations.
 
+\paragraph{Def:} The function $f: \mathbb{R}^n \to \mathbb{R}^m$ has the limit
+$$ L = (L_1, \dots,L_m) \in \mathbb{R}^m$$
+at the point $a = (a_1, \dots, a_n) \in \mathbb{R}^n$ if given any $\epsilon >0$, there is some $\delta > 0$ such that for all $x \in \mathbb{R}^n$, if
+$$0 < |x-a| < \delta$$
+we have
+$$|f(x)-L| < \epsilon$$
+We denote this limit by
+$$\lim_{x \to a} f(x) = L$$
+or by $f(x) \to L$ as $x \to a$.
+
+\paragraph{Def:} The function $f: \mathbb{R}^n \to \mathbb{R}^m$ is \textit{continuous} at a point $a \in \mathbb{R}^n$ if $$\lim_{x \to a}  f(x) = f(a)$$.
+
+\paragraph{Def:} A function $f: \mathbb{R}^n \to \mathbb{R}^m$ is \textit{differentiable} at $a \in \mathbb{R}^n$ if there is an $m \times n$ matrix $A: \mathbb{R}^n \to \mathbb{R}^m$ such that
+$$\lim_{x \to a} \frac{|f(x)-f(a)-A\cdot(x-a)|}{|x-a|}  = 0$$
+This matrix is called the \textit{Jacobian} and is denoted by $Df(a)$.
+
+\paragraph{Thm.} If the Jacobian of a function exists, then it is unique up to change in basis.
+
+\paragraph{Note:} This doesn't look like a pure extension of the single variable case, but that's because it extends a different form of the single-variable definition, namely
+$$\lim_{x \to a} \frac{|f(x)-f(a)-f'(a)(x-a)|}{|x-a|}  = 0$$
+This form makes it clear that the Jacobian matrix is really equivalent to the derivative of the multivariate function evaluated at the point $a$.
+
+\paragraph{Thm.} Let $f: \mathbb{R}^n \to \mathbb{R}^m$ be given by $m$ differentiable functions such that
+$$ f(x_1, \dots, x_n) = 
+\begin{pmatrix}
+f_1(x_1, \dots, x_n)\\
+\vdots\\
+\vdots\\
+f_m(x_1, \dots, x_n)
+\end{pmatrix}$$ 
+Then $f$ is differentiable and the Jacobian is
+$$ Df(a) = 
+\begin{pmatrix}
+\frac{\partial f_1}{\partial x_1} & \dots & \frac{\partial f_1}{\partial x_n}\\
+\vdots & \quad & \vdots\\
+\frac{\partial f_m}{\partial x_1} & \dots & \frac{\partial f_m}{\partial x_n}
+\end{pmatrix}$$
+
+\paragraph{Chain Rule:} Let $f: \mathbb{R}^n \to \mathbb{R}^m$ and $g: \mathbb{R}^m \to \mathbb{R}^l$ be differentiable functions. Then the composition function
+$$ g \circ f: \mathbb{R}^n \to \mathbb{R}^l$$
+is also differentiable with derivative given by: if $f(a) = b$, then
+$$ D(g \circ f)(a) = D(g)(b) \cdot D(f)(a)$$
+
+\paragraph{Linear Approximation:} The vector $y = f(x)$ can be approximated by 
+$$ y \approx f(a) + Df(a) \cdot (x-a)$$
+This is equivalent to finding the tangent line of a curve in the single-variable case.
+
+\paragraph{Inverse Function Theorem:} For a vector valued, continuously differentiable function $f: \mathbb{R}^n \to \mathbb{R}^m$, assume that $detDf(a) \neq 0$, at some point $a\in \mathbb{R}^n$. Then there is an open neighborhood $U$ of $a$ in $\mathbb{R}^n$ and an open neighborhood of $V$ of $f(a)$ in $\mathbb{R}^m$ such that $f: U \to V$ is one to one, onto and has a differentiable inverse $g: V \to U$.
+
+\paragraph{Note:} In terms of linear algebra, the Jacobian is just a matrix. This means that the derivative is a linear transformation and all the tools from linear algebra can be applied. The Inverse Function Theorem simply notes that when the Jacobian matrix is invertible, the matrix will have an inverse and therefore the function it represents will also have an inverse.
+
+\paragraph{Implicit Function Theorem:} Let $f_1(x,y), \dots, f_k(x,y)$ be $k$ continuously differentiable functions on $\mathbb{R}^{n+k}$ and suppose that $p = (a,b) \in \mathbb{R}^{n+k}$ is a point for which
+$$ f_a(a,b) = 0, \dots, f_k(a,b) = 0$$
+Suppose that at the point $p$ the $k \times k$ matrix
+$$ M = 
+\begin{pmatrix}
+\frac{\partial f_1}{\partial y_1(p)} & \dots & \frac{\partial f_1}{\partial y_k(p)}\\
+\vdots & \quad & \vdots\\
+\frac{\partial f_k}{\partial y_1(p)} & \dots & \frac{\partial f_k}{\partial y_k(p)}
+\end{pmatrix}$$
+is invertible. Then in a neighborhood of $a$ in $\mathbb{R}^n$ there are $k$ unique, differentiable functions
+$$p_1(x), \dots, p_k(x)$$
+such that
+$$ f_1(x,p_1(x))=0, \dots, f_k(x,p_k(x)) = 0$$
 \end{document}
