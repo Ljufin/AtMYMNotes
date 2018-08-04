@@ -167,6 +167,34 @@ $$ det(Df) = -r_1 + r_2 = 0 \implies r_1 = r_2$$
 This situation is the result of the polynomial having a repeated root. Therefore, the polynomial will only have one root, i.e. one point where the polynomial touches the x-axis. This will be either a max or a min and is therefore the only point when the slope is zero.
 \end{flushleft}
 
+\paragraph{3a.} Via the quadratic equation, write down the functions giving the change of coordinates from the coordinate space to the root space.
+\begin{flushleft}
+\textit{Answer:}\\
+Using the quadratic formula, we get the equations
+$$ r_1 = \frac{-a+\sqrt{a^2-4b}}{2}, r_2 = \frac{-a-\sqrt{a^2-4b}}{2}$$
+We can write our function as 
+$$ f(a,b) = 
+\begin{pmatrix}
+\frac{-a+\sqrt{a^2-4b}}{2}\\
+\frac{-a-\sqrt{a^2-4b}}{2}
+\end{pmatrix}$$
+\end{flushleft}
 
+\paragraph{3b.} Compute the Jacobian.
+\begin{flushleft}
+\textit{Answer:}\\
+$$Df(a,b) = 
+\begin{pmatrix}
+-\frac{1}{2}+\frac{1}{4}(a^2-4b)^{-1/2}(2a) & -(a^2-4b)^{-1/2}\\
+-\frac{1}{2}-\frac{1}{4}(a^2-4b)^{-1/2}(2a) & (a^2-4b)^{-1/2}
+\end{pmatrix}$$
+\end{flushleft}
 
+\paragraph{3c.} Find where this coordinate change is not invertible.
+\begin{flushleft}
+\textit{Answer:}\\
+$$ det(Df) = \left[ -\frac{1}{2}+\frac{1}{4}(a^2-4b)^{-1/2}(2a) \right]\left[ (a^2-4b)^{-1/2}\right] - \left[ -\frac{1}{2}-\frac{1}{4}(a^2-4b)^{-1/2}(2a)\right]\left[ -(a^2-4b)^{-1/2}\right]$$
+$$  = \left[ (a^2-4b)^{-1/2}\right]\left[ -1\right] = -\frac{1}{\sqrt{a^2-4b}}$$
+Therefore, the coordinate change will singular when $a^2 = 4b$.
+\end{flushleft}
 \end{document}
