@@ -1,0 +1,24 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+
+\begin{center}
+\textbf{Lebesgue Integration}
+\end{center}
+
+\paragraph{Def:} For the interval $E = [a,b]$, the \textit{length} of $E$ is 
+$$ \ell(E) = b-a$$
+
+\paragraph{Note:} Finding the length of intervals is easy, but we can also find the length of sets that are not intervals based on what we know about the easy lengths.
+
+\paragraph{Def:} Let $E$ be any subset of $\mathbb{R}$. A countable collection of intervals $\{ I_n \}$, with each $I_n = [a_n, b_n]$, \textit{covers} the set $E$ if
+$$ E \subset \bigcup I_n$$
+
+\paragraph{Def:} For any set $E$ in $\mathbb{R}$, the \textit{outer measure} of $E$ is 
+$$ m^*(E) = \inf\left \{ \sum (b_n-a_n)\right \}$$
+such that the collection of intervals $\{ [a_n, b_n]\}$ covers E.
+
+\end{document}
