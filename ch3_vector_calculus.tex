@@ -92,4 +92,81 @@ is invertible. Then in a neighborhood of $a$ in $\mathbb{R}^n$ there are $k$ uni
 $$p_1(x), \dots, p_k(x)$$
 such that
 $$ f_1(x,p_1(x))=0, \dots, f_k(x,p_k(x)) = 0$$
+
+\paragraph{Exercises:}
+
+\paragraph{1a.} Compute the Jacobian for the change to polar coordinates.
+\begin{flushleft}
+\textit{Answer:}\\
+We first write the functions for the coordinate change as a multivariate function.
+$$ h(x,y) = h(f(r,\theta), g(r,\theta)) = 
+\begin{pmatrix}
+r\cos(\theta)\\
+r\sin(\theta)
+\end{pmatrix}$$
+Now we can take the matrix of partials
+$$ Dh(x,y) = 
+\begin{pmatrix}
+\cos(\theta) & -r\sin(\theta)\\
+\sin(\theta) & r\cos(\theta)
+\end{pmatrix} $$
+\end{flushleft}
+
+\paragraph{1b.} At what points is the change of coordinates not well-defined?
+
+\begin{flushleft}
+\textit{Answer:}\\
+We can determine this by setting the determinate of the Jacobian to 0
+$$ (\cos\theta)(r\cos\theta)+(\sin\theta)(r\sin\theta) = 0$$
+The change of coordinates function will not be defined at $(0,0)$, or you could also say it is not defined whenever $r=0$.
+\end{flushleft}
+
+\paragraph{1c.} Give a geometric justification for your answer in part b.
+\begin{flushleft}
+\textit{Answer:}\\
+When $r=0$, there is a problem going back to Cartesian coordinates. The problem is that when the radius is zero, it gets weird because all the $\theta$ values will lead to the same point. (Describing this geometrically is weird when its trivial to show that the inverse of the Jacobian will involve division by zero at $r=0$)
+\end{flushleft}
+
+\paragraph{2.} The roots and the coefficients of degree 2 monic polynomials are related by
+$$ (x-r_1)(x-r_2) = x^2+ax+b$$
+
+\paragraph{2a.} Write down the functions giving the change of coordinates from the root space to the coefficient space. 
+\begin{flushleft}
+\textit{Answer:}\\
+Multiply out the LHS
+$$ (x-r_1)(x-r_2) = x^2 -(r_1+r_2)x+r_1r_2 = x^2 +ax +b$$
+This gives us the needed equations for $a$ and $b$
+$$ a = -(r_1+r_2), b = r_1r_2$$
+We can therefore write our function as
+$$f(r_1, r_2) = 
+\begin{pmatrix}
+-r_1-r_2\\
+r_1r_2
+\end{pmatrix}$$
+\end{flushleft}
+
+\paragraph{2b.} Compute the Jacobian of the coordinate change.
+\begin{flushleft}
+\textit{Answer:}\\
+The Jacobian is
+$$ Df = \begin{pmatrix}
+-1 & -1\\
+r_2 & r_1
+\end{pmatrix}$$
+\end{flushleft}
+
+\paragraph{2c.} Find where this coordinate change is not invertible.
+\begin{flushleft}
+\textit{Answer:}\\
+$$ det(Df) = -r_1 + r_2 = 0 \implies r_1 = r_2$$
+\end{flushleft}
+
+\paragraph{2d.} Give a geometric interpretation to your answer in part c.
+\begin{flushleft}
+\textit{Answer:}\\
+This situation is the result of the polynomial having a repeated root. Therefore, the polynomial will only have one root, i.e. one point where the polynomial touches the x-axis. This will be either a max or a min and is therefore the only point when the slope is zero.
+\end{flushleft}
+
+
+
 \end{document}
