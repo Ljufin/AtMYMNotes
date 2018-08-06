@@ -21,4 +21,39 @@ $$ E \subset \bigcup I_n$$
 $$ m^*(E) = \inf\left \{ \sum (b_n-a_n)\right \}$$
 such that the collection of intervals $\{ [a_n, b_n]\}$ covers E.
 
+\paragraph{Note:} This definition is basically saying that the outer measure is the smallest covering of the set.
+
+\paragraph{Def:} A set $E$ is measurable if for every set $A$,
+$$ m^*(A) = m^*(A \cap E) + m^*(A-E)$$
+The \textit{measure} of a measurable set $E$, denoted by $m(E)$, is $m^*(E)$.
+
+\paragraph{Def:} The \textit{inner measure} of a set $E$ is
+$$ m_*(E) = \sup \left \{ \sum (b_n-a_n) | E \supset \bigcup I_n \text{ and } I_n = [a_n,b_n] \text{ with } a_n \leq b_n \right \}$$
+
+\paragraph{Note:} The intuition for the inner measure is that we are filling the interval in question with a collection of closed intervals.
+
+\paragraph{Thm.} If $m^*(E) < \infty$, then the set $E$ is measurable if and only if
+$$ m^*(E) = m_*(E)$$
+
+\paragraph{Example:} The Cantor set is constructed bu taking the unit interval and dividing it into thirds and leaving out the middle third. This process is repeated recursively forever. The result is a set that has measure zero since the length of the intervals goes to zero. The Cantor set is also uncountable because every element can be expressed as an infinite sequence of 0's and 2's.
+
+\paragraph{Def:} For a countable collection of disjoint measurable sets $A_i$, the function
+$$ \sum a_i \chi_{A_i}$$
+is called a \textit{step function}.
+
+\paragraph{Def:} Let $E$ be a measurable set and let $\sum  a_i \chi_{A_i}$ be a step function. Then
+$$ \int_E \left( \sum  a_i \chi_{A_i} \right)= \sum a_i m(A_i \cap E)$$
+
+\paragraph{Def:} A function $f: E \to \mathbb{R} \cup \infty \cup -\infty$ is measurable if its domain $E$ is measurable and if, for any fixed $\alpha \in \mathbb{R} \cup \infty \cup -\infty$, $\{x \in E | f(x) = \alpha \}$ is measurable.
+
+\paragraph{Def:} Let $f$ be a measurable function on $E$. Then the \textit{Lebesgue integral} of $f$ on $E$ is
+$$ \int_E f = \inf \left\{  \int_E \sum a_i\chi_{A_i} | \forall x \in E, \sum a_i \chi_{A_i} \geq f(x) \right\}$$
+
+\paragraph{Note:} The intuition for the Lebesgue integral is to approximate the function using a step function and then sum the product of the function values and the measures at each step.
+
+\paragraph{Lebesgue Dominating Convergence Theorem:}  Let $g(x)$ be a Lebesgue integrable function on a measurable set $E$ and let $\{f_n(x)\}$ be a sequence of Lebesgue integrable functions $E$ with $|f_k(x)| \leq g(x)$ for all $x \in E$ and such that there is a pointwise limit of the $f_k(x)$, i.e. there is a function $f(x)$ with
+$$ f(x) = \lim_{k \to \infty} f_k(x)$$
+Then 
+$$ \int_E \lim_{k \to \infty} f_k(x) = \lim_{k \to \infty} \int_E f_k(x)$$
+
 \end{document}
