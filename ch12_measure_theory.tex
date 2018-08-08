@@ -56,4 +56,29 @@ $$ f(x) = \lim_{k \to \infty} f_k(x)$$
 Then 
 $$ \int_E \lim_{k \to \infty} f_k(x) = \lim_{k \to \infty} \int_E f_k(x)$$
 
+\paragraph{Exercises:}
+\paragraph{1.} Let $X$ be any countable set of real numbers. Show that $m(X)=0$.
+\begin{flushleft}
+\textit{Answer:}\\
+Let $X = \{x_i \}_{i=1}^n$ be a countable set of real numbers. For every $x_i$, we can cover the real number with the interval $(x_i-2^{-i}\epsilon, x_i+2^{-i}\epsilon) = A_i$ for $\epsilon > 0$. Therefore, we have constructed a new set such that
+$$ X \subseteq \bigcup_{i=1}^n A_i$$
+Since the measure of $X$ must be smaller or equal to the measure of the new set, we have
+$$ m(X) \leq m\left(\bigcup_{i=1}^n A_i\right) \leq \sum_{i=1}^n \ell(A_i)$$
+Substituting in the length of the intervals,
+$$ \sum_{i=1}^n \ell(A_i) = \sum_{i=1}^n \left[(x_i+2^{-i}\epsilon)-(x_i-2^{-i}\epsilon)\right] = \sum_{i=1}^n 2^{1-i}\epsilon = \epsilon + \sum_{i=1}^n 2^{-i}\epsilon = 2\epsilon$$
+This gives us
+$$ m(X) \leq 2\epsilon$$
+which means that $m(X) =0$. $\blacksquare$
+\end{flushleft}
+
+\paragraph{2.} Let $f(x)$ and $g(x)$ be two Lebesgue integrable functions, both with domain $E$. Suppose that the set
+$$ A = \{x \in E | f(x) \neq g(x) \}$$
+has measure zero. What can be said about $\int_Ef(x)$ and $\int_Eg(x)$?
+\begin{flushleft}
+\textit{Answer:}\\
+By the definition of a Lebesgue integrable function, $E$ must be measurable, $\{x \in E|f(x) = \alpha \}$ and $\{x \in E|g(x) = \beta\}$ are measurable for fixed $\alpha$ and $\beta$. $A$ having measure zero means that $f(x)$ and $g(x)$ are very similar except at arbitrarily small intervals. Therefore, $\int_Ef(x)=\int_Eg(x)$.
+\end{flushleft}
+
+
+
 \end{document}
