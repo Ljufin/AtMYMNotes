@@ -1,0 +1,44 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+
+\begin{center}
+\textbf{Classical Stokes Theorems}
+\end{center}
+
+\paragraph{Def:} A \textit{vector field} on $\mathbb{R}^n$ is a vector-valued function $F: \mathbb{R}^n \to \mathbb{R}^m$. If $x_1,\dots,x_n$ are coordinates for $\mathbb{R}^n$, then the vector field $F$ will be described by $m$ real-valued functions $f_k: \mathbb{R}^n \to \mathbb{R}$ as follows
+$$ F(x_1,\dots,x_n) = 
+\begin{pmatrix}
+f_1(x_1,\dots,x_n)\\
+\vdots\\
+f_m(x_1,\dots,x_n)
+\end{pmatrix}$$
+
+\paragraph{Def:} A vector field is \textit{continuous} if each real-valued function $f_k$ is continuous.
+
+\paragraph{Def:} A vector field is \textit{differentiable} if each real-valued function $f_k$ is differentiable.
+
+\paragraph{Note:} A vector field is essentially a function that you plug a vector in and get a vector out. There is no connection to the abstract algebra idea of a field. (Stupid physicists, always ruining perfectly good math)
+
+\paragraph{Def:} A \textit{differentiable manifold} $M$ of dimension $k$ in $\mathbb{R}^n$ is a set of points in $\mathbb{R}^n$ such that for any point $p \in M$, there is a small open neighborhood $U$ of $p$, a vector-valued differentiable function $F:\mathbb{R}^k \to \mathbb{R}^n$ and an open set $V$ in $\mathbb{R}^k$ with
+\begin{enumerate}
+\item $F(V) = U \cap M$
+\item The Jacobian of $F$ has rank $k$ at every point in $V$
+\end{enumerate}
+The function $F$ is called the \textit{parametrization} of the manifold.
+
+\paragraph{Note:} The reason why the Jacobian needs to have rank equal to the dimension of the manifold is so the Jacobian will have a $k\times k $ minor.
+
+\paragraph{Examples:} A circle is a 1-dimensional manifold in 2-space. A cone is a 2-dimensional manifold in 3-space.
+
+\paragraph{Def:} The \textit{closure} of $M$, denoted $\bar{M}$, is the set of all points $x$ in $\mathbb{R}^n$ such that there is a sequence of points $\{x_n\}$ in the manifold $M$ with
+$$\lim_{n \to \infty} x_n = x$$
+The \textit{boundary} of $M$, denoted $\partial M$, is:
+$$ \partial M = \bar{M} - M$$
+
+\paragraph{Note:} The boundary of an $n$-dimensional manifold is usually either empty or is a $(n-1)$-dimensional manifold.
+
+\end{document}
